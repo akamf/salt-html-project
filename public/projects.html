@@ -6,9 +6,9 @@
   <title>Andreas Kamf - Projects</title>
   <link href="./dist/output.css" rel="stylesheet" />
 </head>
-<body class="min-h-screen flex flex-col bg-gray-800 text-white font-sans animate-fade">
+<body id="pageBody" class="min-h-screen flex flex-col bg-gray-800 text-white font-sans opacity-0">
   <header class="flex justify-between items-center px-6 py-4 relative z-50">
-    <a href="index.html" class="text-2xl md:text-4xl font-bold pointer-events-none cursor-default">AKAMF</a>
+    <a href="index.html" class="text-2xl md:text-4xl font-bold hover:text-gray-500">AKAMF</a>
 
     <div class="flex items-center gap-6 text-sm md:text-lg">
       <nav class="hidden md:flex items-center gap-6">
@@ -76,6 +76,46 @@
           <a href="#" class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-white text-black rounded-full font-medium hover:bg-gray-200 transition w-fit self-start">
             Go to project →
           </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contact Modal -->
+    <div id="contactModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] hidden">
+      <div class="bg-white text-gray-800 rounded-2xl p-8 w-[90%] max-w-md shadow-lg relative animate-fadeIn min-h-[420px] flex flex-col justify-center">
+
+      <!-- Close Button -->
+        <button id="closeModal" class="absolute top-4 right-4 text-xl font-bold text-gray-500 hover:text-gray-800">
+        &times;
+        </button>
+
+        <!-- Contact Form -->
+        <form id="contactForm" class="flex flex-col gap-4">
+        <h2 class="text-2xl font-bold mb-2">Contact Me</h2>
+        <input
+          type="email"
+          required
+          placeholder="Your email"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+        />
+        <textarea
+          required
+          placeholder="Your message"
+          rows="4"
+          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
+        ></textarea>
+        <button
+          type="submit"
+          class="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 transition"
+        >
+          Send Message
+        </button>
+        </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="hidden text-center text-gray-800 font-semibold mt-4">
+          ✅ Message sent!
         </div>
       </div>
     </div>
