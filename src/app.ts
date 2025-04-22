@@ -4,6 +4,12 @@ button?.addEventListener('click', () => {
   alert('Button clicked with TypeScript!');
 });
 
-function toggleMenu() {
-  document.getElementById('mobileMenu')?.classList.toggle('hidden');
+export function toggleMenu(): void {
+  const menu = document.getElementById('mobileMenu');
+  const button = document.querySelector('button');
+
+  if (menu && button) {
+    menu.classList.toggle('hidden');
+    button.classList.toggle('burger-active');
+  }
 }
