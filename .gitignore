@@ -1,0 +1,25 @@
+# Node modules
+node_modules/
+
+# Output from TypeScript
+/public/js/
+
+# Tailwind output
+/public/dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specifika filer
+.DS_Store
+Thumbs.db
+
+# VSCode settings (valfritt)
+.vscode/
+
+# Env files (om du lägger till i framtiden)
+.env
+
+dist
