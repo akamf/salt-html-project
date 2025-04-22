@@ -11,5 +11,6 @@ export function toggleMenu(): void {
   if (menu && button) {
     menu.classList.toggle('hidden');
     button.classList.toggle('burger-active');
+    document.body.classList.toggle('overflow-hidden'); // 👈 Disable/enable scroll
   }
 }
