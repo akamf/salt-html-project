@@ -1,13 +1,16 @@
 import '../src/input.css';
 import '../src/style.css';
 
-window.addEventListener('DOMContentLoaded', () => {
-	const body = document.getElementById('pageBody');
-	if (body) {
-		body.classList.remove('opacity-0');
-		body.classList.add('animate-fadeIn');
-	}
-});
+import { initRouter, addRoute } from './spa-router';
+import { renderHome } from '../src/views/home';
+import { renderAbout } from '../src/views/about';
+import { renderProjects } from '../src/views/projects';
+
+addRoute('/', renderHome);
+addRoute('/about', renderAbout);
+addRoute('/projects', renderProjects);
+
+initRouter();
 
 const contactButton = document.querySelector('a[href="#"]');
 const contactModal = document.getElementById('contactModal');

@@ -6,16 +6,16 @@
   <title>Andreas Kamf</title>
   <link href="./dist/output.css" rel="stylesheet" />
 </head>
-<body id="pageBody" class="min-h-screen flex flex-col bg-gray-800 text-white font-sans opacity-0">
+<body id="pageBody" class="min-h-screen flex flex-col bg-gray-800 text-white font-sans">
   <header class="flex justify-between items-center px-6 py-4 relative z-50">
-    <a href="index.html" class="text-2xl md:text-4xl font-bold  pointer-events-none cursor-default ">AKAMF</a>
+    <a href="/" data-link class="text-2xl md:text-4xl font-bold cursor-pointer">AKAMF</a>
     <div class="flex items-center gap-6 text-sm md:text-lg">
       <nav class="hidden md:flex items-center gap-6">
-        <a href="about.html" class="hover:underline">ABOUT ME</a>
-        <a href="projects.html" class="hover:underline">PROJECTS</a>
+        <a href="/about" data-link class="hover:underline">ABOUT ME</a>
+        <a href="/projects" data-link class="hover:underline">PROJECTS</a>
       </nav>
 
-      <a href="#" class="bg-white text-gray-800 px-4 py-1 md:px-6 md:py-2 rounded-full font-medium hover:bg-gray-200 transition">
+      <a href="#" id="contactButton" class="bg-white text-gray-800 px-4 py-1 md:px-6 md:py-2 rounded-full font-medium hover:bg-gray-200 transition">
         CONTACT
       </a>
 
@@ -29,59 +29,26 @@
 
   <div id="mobileMenu"
     class="hidden absolute inset-0 bg-gray-800 bg-opacity-95 flex flex-col items-end justify-start text-right text-lg gap-4 pt-20 pr-6 z-40 md:hidden">
-    <a href="about.html" class="hover:underline">ABOUT ME</a>
-    <a href="projects.html" class="hover:underline">PROJECTS</a>
+    <a href="/about" data-link class="hover:underline">ABOUT ME</a>
+    <a href="/projects" data-link class="hover:underline">PROJECTS</a>
   </div>
 
-  <main class="flex-grow flex flex-col items-center justify-center text-center px-6 z-0">
-    <h1 class="text-6xl md:text-8xl font-extrabold leading-tight tracking-tight">
-      ANDREAS<br class="hidden sm:inline"> KAMF
-    </h1>
-    <p class="mt-6 text-xs md:text-sm text-gray-400 tracking-widest uppercase">
-      System Developer
-    </p>
-    
-    <!-- Contact Modal -->
-    <div id="contactModal"
-      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] hidden">
-      <div class="bg-white text-gray-800 rounded-2xl p-8 w-[90%] max-w-md shadow-lg relative animate-fadeIn min-h-[420px] flex flex-col justify-center">
+  <!-- SPA container -->
+  <main id="app" class="flex-grow z-0"></main>
 
-      <!-- Close Button -->
-        <button id="closeModal" class="absolute top-4 right-4 text-xl font-bold text-gray-500 hover:text-gray-800">
-        &times;
-        </button>
-
-        <!-- Contact Form -->
-        <form id="contactForm" class="flex flex-col gap-4">
+  <!-- Contact Modal -->
+  <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[9999] hidden">
+    <div class="bg-white text-gray-800 rounded-2xl p-8 w-[90%] max-w-md shadow-lg relative min-h-[420px] flex flex-col justify-center">
+      <button id="closeModal" class="absolute top-4 right-4 text-xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
+      <form id="contactForm" class="flex flex-col gap-4">
         <h2 class="text-2xl font-bold mb-2">Contact Me</h2>
-        <input
-          type="email"
-          required
-          placeholder="Your email"
-          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        />
-        <textarea
-          required
-          placeholder="Your message"
-          rows="4"
-          class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-400"
-        ></textarea>
-        <button
-          type="submit"
-          class="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 transition"
-        >
-          Send Message
-        </button>
-        </form>
-
-        <!-- Success Message -->
-        <div id="successMessage" class="hidden text-center text-gray-800 font-semibold mt-4">
-          ✅ Message sent!
-        </div>
-      </div>
+        <input type="email" required placeholder="Your email" class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-400" />
+        <textarea required placeholder="Your message" rows="4" class="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-400"></textarea>
+        <button type="submit" class="bg-gray-800 text-white py-2 px-4 rounded-md hover:bg-gray-700 transition">Send Message</button>
+      </form>
+      <div id="successMessage" class="hidden text-center text-gray-800 font-semibold mt-4">✅ Message sent!</div>
     </div>
-
-  </main>
+  </div>
 
   <script type="module" src="./main.ts"></script>
 </body>
